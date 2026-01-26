@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventstream",
+    "displayName": "HealthcareBillingSystem"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "115d6908-a6b7-ae92-43a4-be2f44ae77d6"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLDashboard",
+    "displayName": "HealthcareBillingSystem",
+    "description": "HealthcareBillingSystem"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "347bd8e0-f7fb-973f-4073-ac60736feb28"
+  }
+}
