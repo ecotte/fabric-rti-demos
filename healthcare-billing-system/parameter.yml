@@ -2,6 +2,6 @@ key_value_replace:
     # Variable Library to be replaced
     - find_key: $.variables[?(@.name=="eventHubName")].value
       replace_value:
-          PPE: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
-          PROD: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
+          PPE: "Test"
+          PROD: "Test"
       file_path: "**/variables.json"
