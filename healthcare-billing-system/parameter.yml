@@ -6,7 +6,14 @@ key_value_replace:
     item_type: "VariableLibrary"
     item_name: "HealthcareBillingSystem"
 
-  # Variable Library to be replaced
+    # Variable Library to be replaced
+  - find_key: $.variables[?(@.name=="eventHubConnString")].value
+    replace_value:
+      _ALL_: "$items.KQLDatabase.HealthcareBillingSystem.$id"
+    item_type: "VariableLibrary"
+    item_name: "HealthcareBillingSystem"
+
+  # KQL Dashboard to be replaced
   - find_key: $.dataSources[?(@.name=="ContosoHealth")].database
     replace_value:
       _ALL_: "$items.KQLDatabase.HealthcareBillingSystem.$id"
