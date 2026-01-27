@@ -5,3 +5,24 @@ key_value_replace:
       _ALL_: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
     item_type: "VariableLibrary"
     item_name: "HealthcareBillingSystem"
+
+  # Variable Library to be replaced
+  - find_key: $.dataSources[?(@.name=="ContosoHealth")].clusterUri
+    replace_value:
+      _ALL_: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
+    item_type: "KQLDashboard"
+    item_name: "HealthcareBillingSystem"
+
+  # Variable Library to be replaced
+  - find_key: $.dataSources[?(@.name=="ContosoHealth")].database
+    replace_value:
+      _ALL_: "$items.KQLDatabase.HealthcareBillingSystem.$id"
+    item_type: "KQLDashboard"
+    item_name: "HealthcareBillingSystem"
+
+  # Variable Library to be replaced
+  - find_key: $.dataSources[?(@.name=="ContosoHealth")].workspace
+    replace_value:
+      _ALL_: "$workspace.$id"
+    item_type: "KQLDashboard"
+    item_name: "HealthcareBillingSystem"
