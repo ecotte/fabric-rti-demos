@@ -14,8 +14,22 @@ key_value_replace:
     item_name: "HealthcareBillingSystem"
 
   # KQL Dashboard to be replaced
-  - find_key: $.dataSources[?(@.name=="HealthcareBillingSystemConnection")].name
+  - find_key: $.dataSources[?(@.name=="HealthcareBillingSystemConnection")].clusterUri
     replace_value:
-      _ALL_: "$items.KQLDatabase.HealthcareBillingSystem.$name"
+      _ALL_: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
+    item_type: "KQLDashboard"
+    item_name: "HealthcareBillingSystem"
+
+  # KQL Dashboard to be replaced
+  - find_key: $.dataSources[?(@.name=="HealthcareBillingSystemConnection")].database
+    replace_value:
+      _ALL_: "$items.KQLDatabase.HealthcareBillingSystem.$id"
+    item_type: "KQLDashboard"
+    item_name: "HealthcareBillingSystem"
+
+  # KQL Dashboard to be replaced
+  - find_key: $.dataSources[?(@.name=="HealthcareBillingSystemConnection")].workspace
+    replace_value:
+      _ALL_: "$workspace.$id"
     item_type: "KQLDashboard"
     item_name: "HealthcareBillingSystem"
