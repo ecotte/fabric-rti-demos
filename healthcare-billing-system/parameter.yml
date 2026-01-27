@@ -4,5 +4,4 @@ key_value_replace:
       replace_value:
           PPE: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
           PROD: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
-      item_name: "HealthcareBillingSystem" # name of the variable library file
-      file_path: "/Emulator/HealthcareBillingSystem.VariableLibrary/variables.json"
+      file_path: "**/variables.json"
