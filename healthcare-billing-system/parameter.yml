@@ -2,5 +2,6 @@ key_value_replace:
     # Variable Library to be replaced
     - find_key: $.variables[?(@.name=="eventHubName")].value
       replace_value:
-          _ALL_: "Test"
+          _ALL_: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
+      item_type: "VariableLibrary"
       file_path: "**/HealthcareBillingSystem.VariableLibrary/variables.json"
