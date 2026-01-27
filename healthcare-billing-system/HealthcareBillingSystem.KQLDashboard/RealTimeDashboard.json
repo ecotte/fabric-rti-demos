@@ -298,7 +298,7 @@
       "scopeId": "kusto-trident",
       "clusterUri": "",
       "database": "c2e6e870-d1ad-b534-41fa-5ca51ff03d79",
-      "name": "HealthcareBillingSystemConnection",
+      "name": "HealthcareBillingSystem",
       "id": "8fc5432e-172f-43d8-b860-2c1ecf0d8076",
       "workspace": "00000000-0000-0000-0000-000000000000"
     }

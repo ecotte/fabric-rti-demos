@@ -14,7 +14,7 @@ key_value_replace:
     item_name: "HealthcareBillingSystem"
 
   # KQL Dashboard to be replaced
-  - find_key: $.dataSources[?(@.name=="HealthcareBillingSystemConnection")].name
+  - find_key: $.dataSources[?(@.name=="HealthcareBillingSystem")].name
     replace_value:
       _ALL_: "HealthcareBillingSystem"
     item_type: "KQLDashboard"
