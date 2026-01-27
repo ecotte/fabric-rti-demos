@@ -4,6 +4,7 @@ key_value_replace:
       replace_value:
           PPE: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
           PROD: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
+      item_type: "VariableLibrary" # filter on variable library files
       item_name: "HealthcareBillingSystem" # name of the variable library file
     - find_key: $.dataSources[?(@.name=="ContosoHealth")].database
       replace_value:
