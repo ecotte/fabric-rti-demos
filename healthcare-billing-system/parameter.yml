@@ -3,5 +3,5 @@ key_value_replace:
     - find_key: $.variables[?(@.name=="eventHubName")].value
       replace_value:
           PPE: "Test"
-          PROD: "Test"
+          Default value set: "Test"
       file_path: "**/HealthcareBillingSystem.VariableLibrary/variables.json"
