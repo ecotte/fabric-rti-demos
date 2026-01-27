@@ -1,7 +1,3 @@
-// KQL script
-// Use management commands in this script to configure your database items, such as tables, functions, materialized views, and more.
-
-
 .create-merge table bronze_contoso_health (timestamp:datetime, event_id:guid, source:string, sensor_data:dynamic) 
 .create-or-alter table bronze_contoso_health ingestion json mapping 'bronze_contoso_health_mapping'
 ```
