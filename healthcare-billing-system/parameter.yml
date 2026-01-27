@@ -4,4 +4,4 @@ key_value_replace:
       replace_value:
           PPE: "Test"
           PROD: "Test"
-      file_path: "**/variables.json"
+      file_path: "**/HealthcareBillingSystem.VariableLibrary/variables.json"
