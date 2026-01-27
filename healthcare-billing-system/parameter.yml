@@ -1,29 +1,21 @@
 key_value_replace:
     # Variable Library to be replaced
     - find_key: $.variables[?(@.name=="eventHubName")].value
-      replace_value:
-          PPE: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
-          PROD: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
+      replace_value: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
       item_name: "HealthcareBillingSystem" # name of the variable library file
       file_path: "Emulator/HealthcareBillingSystem.VariableLibrary/variables.json"
     - find_key: $.dataSources[?(@.name=="ContosoHealth")].database
-      replace_value:
-          PPE: "$items.KQLDatabase.HealthcareBillingSystem.$id"
-          PROD: "$items.KQLDatabase.HealthcareBillingSystem.$id"
+      replace_value: "$items.KQLDatabase.HealthcareBillingSystem.$id"
       item_type: "KQLDashboard" # filter on variable library files
       item_name: "HealthcareBillingSystem" # name of the variable library file
       file_path: "HealthcareBillingSystem.KQLDashboard/RealTimeDashboard.json"
     - find_key: $.dataSources[?(@.name=="ContosoHealth")].clusterUri
-      replace_value:
-          PPE: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
-          PROD: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
+      replace_value: "$items.Eventhouse.HealthcareBillingSystem.$queryserviceuri"
       item_type: "KQLDashboard" # filter on variable library files
       item_name: "HealthcareBillingSystem" # name of the variable library file
       file_path: "HealthcareBillingSystem.KQLDashboard/RealTimeDashboard.json"
     - find_key: $.dataSources[?(@.name=="ContosoHealth")].workspace
-      replace_value:
-          PPE: "$workspace.$id"
-          PROD: "$workspace.$id"
+      replace_value: "$workspace.$id"
       item_type: "KQLDashboard" # filter on variab
       item_name: "HealthcareBillingSystem" # name of the variable library file
       file_path: "HealthcareBillingSystem.KQLDashboard/RealTimeDashboard.json"
