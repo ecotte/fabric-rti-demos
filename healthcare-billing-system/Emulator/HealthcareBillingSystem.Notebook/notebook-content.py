@@ -23,6 +23,7 @@
 
 ! python --version
 ! pip install azure-eventhub==5.11.5 --upgrade --force --quiet
+! pip install semantic-link-labs --quiet
 
 # METADATA ********************
 
@@ -42,18 +43,34 @@ from azure.eventhub import EventHubProducerClient, EventData
 import os
 import socket
 import random
-
 from random import randrange
+import sempy_labs as labs
+import sempy_labs.variable_library as sempy_variable_library
+import sempy_labs.eventstream as sempy_eventstream
 
-variableLibrary = notebookutils.variableLibrary.getLibrary("HealthcareBillingSystem")
+# METADATA ********************
 
-#EventHubOriginal
-eventHubName = variableLibrary.eventHubName 
-eventHubConnString = variableLibrary.eventHubConnString
-producer_events = EventHubProducerClient.from_connection_string(conn_str=eventHubConnString, eventhub_name=eventHubName)
+# META {
+# META   "language": "python",
+# META   "language_group": "jupyter_python"
+# META }
+
+# CELL ********************
+
+eventstream = "HealthcareBillingSystem"
+eventstream_source_name = "CustomEndpoint-Source"
+
+es_topology = sempy_eventstream.get_eventstream_topology(eventstream=eventstream)
+es_source = es_topology[es_topology["Eventstream Source Name"] == eventstream_source_name]
+es_source_id = es_source["Eventstream Source Id"].iloc[0]
+
+es_source_connection = sempy_eventstream.get_eventstream_source_connection(eventstream=eventstream,source_id=es_source_id)
+es_eventhub_name = es_source_connection["EventHub Name"].iloc[0]
+es_eventhub_connstring = es_source_connection["Primary Connection String"].iloc[0]
+
+producer_events = EventHubProducerClient.from_connection_string(conn_str=es_eventhub_connstring, eventhub_name=es_eventhub_name)
 
 hostname = socket.gethostname()
-
 
 # METADATA ********************
 
@@ -223,7 +240,6 @@ def simulate_hospital_data():
                 grid.log_event(src, sensor_data)
 
             counter += 1
-            print(f"Counter: {counter}, Time: {current_time_pas}, Department: {Department}")
 
             # Determine if we need to sleep
             if current_time_pas >= datetime.now():
