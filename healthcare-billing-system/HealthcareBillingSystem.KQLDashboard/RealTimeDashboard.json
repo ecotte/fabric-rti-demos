@@ -1,5 +1,9 @@
 {
   "schema_version": 67,
+  "autoRefresh": {
+    "enabled": true,
+    "defaultInterval": "10s"
+  },
   "tiles": [
     {
       "id": "01bb22cf-5ef8-4127-8712-1a0b1a038cd0",
