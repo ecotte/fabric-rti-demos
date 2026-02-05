@@ -17,6 +17,22 @@
 
 # MARKDOWN ********************
 
+# ## Demo Overview – Real-Time Healthcare Billing System with Microsoft Fabric
+# 
+# This notebook demonstrates how **Contoso Health Systems** uses **Microsoft Fabric Real-Time Intelligence (RTI)** to modernize patient billing through real-time data ingestion, analytics, and automation.
+# 
+# Contoso integrates streaming and batch data from EHR systems, clinical platforms, and insurance providers to detect billing anomalies, reduce claim rejections, and accelerate revenue collection using Eventstreams, Eventhouse, KQL and Copilot.
+# 
+# ### ▶️ Running the Demo
+# When you **run this notebook**, it will **start emitting simulated streaming data after a few seconds**.  
+# This data represents real-time billing and clinical events flowing through Fabric and is used throughout the demo.
+# 
+# At any point, you can **navigate to the workspace** to:
+# - View live data represented in a **Real-Time Dashboard**
+# - Explore related **Fabric items** such as Eventstreams and Eventhouse
+
+# MARKDOWN ********************
+
 # # Install Event Hub packages
 
 # CELL ********************
