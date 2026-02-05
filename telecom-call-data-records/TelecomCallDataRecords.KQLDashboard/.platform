@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLDashboard",
+    "displayName": "TelecomCallDataRecords",
+    "description": "TelecomCallDataRecords"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ed81d14f-1a35-940f-4c4c-00fb4b13fd05"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "8b179e74-ff39-414c-bd1b-19de5ad12535",
+        "clusterUri": "https://trd-jzvatk8z7ktb3twkd6.z6.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "5e01108e-09ad-4de0-b4dc-3a1a602e8fc0",
+        "databaseItemName": "Telco_Eventhouse"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "2f5351e2-b5f2-4855-8e98-dadc72fadcdc",
+        "content": "cdr_raw\n| take 1\n\ncdr_raw\n| summarize count() by status\n\ncdr_raw\n| summarize count() by call_type\n\ncdr_raw\n| project call_end_time, duration_seconds\n| render timechart \n\n",
+        "title": "Tab",
+        "dataSourceId": "8b179e74-ff39-414c-bd1b-19de5ad12535"
+      }
+    ]
+  }
+}
