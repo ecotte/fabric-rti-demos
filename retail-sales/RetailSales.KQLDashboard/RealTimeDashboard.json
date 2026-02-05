@@ -1,0 +1,461 @@
+{
+  "schema_version": 67,
+  "tiles": [
+    {
+      "id": "cdbcf0e7-4518-47c8-9c6f-d47f760474de",
+      "title": "Sales Count",
+      "visualType": "card",
+      "pageId": "64afd295-ea48-41cb-943a-2d84c9d2e28a",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 5,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "8f52b583-a4ae-420e-b6cd-990ccea9f8fe"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "large",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": false,
+        "colorRules": []
+      }
+    },
+    {
+      "id": "3d4c1250-95e7-4b03-8f20-cea19d58cd63",
+      "title": "Total Lines",
+      "visualType": "card",
+      "pageId": "64afd295-ea48-41cb-943a-2d84c9d2e28a",
+      "layout": {
+        "x": 5,
+        "y": 0,
+        "width": 5,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "68c126b3-31da-4986-8fe9-25d48e636576"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "large",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": false,
+        "colorRules": []
+      }
+    },
+    {
+      "id": "76cc77e6-b473-4b1d-851d-5de0aa47d7bf",
+      "title": "Total Sales Last Day",
+      "visualType": "card",
+      "pageId": "64afd295-ea48-41cb-943a-2d84c9d2e28a",
+      "layout": {
+        "x": 10,
+        "y": 0,
+        "width": 7,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "8feb9370-631b-4aff-9ccc-a608af622079"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": "sum_TotalSales",
+        "colorRulesDisabled": false,
+        "colorRules": [
+          {
+            "id": "19cf1721-0564-4f84-ab2c-0c105572db7d",
+            "ruleType": "colorByCondition",
+            "applyToColumn": null,
+            "hideText": false,
+            "applyTo": "cells",
+            "conditions": [
+              {
+                "operator": ">",
+                "column": "sum_TotalSales",
+                "values": [
+                  "0"
+                ]
+              }
+            ],
+            "chainingOperator": "and",
+            "colorStyle": "bold",
+            "color": "green",
+            "tag": "",
+            "icon": "completed",
+            "ruleName": "Sales",
+            "visualType": "card"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c6889ffe-6c87-471e-b6ba-9a77f9ce86d2",
+      "title": "Sales over time",
+      "visualType": "timechart",
+      "pageId": "64afd295-ea48-41cb-943a-2d84c9d2e28a",
+      "layout": {
+        "x": 0,
+        "y": 3,
+        "width": 24,
+        "height": 6
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "1b7fbcd7-6867-4085-a8e9-1be18cb8ba78"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": "OrderDate",
+        "yColumns": [
+          "TotalSales"
+        ],
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [
+          {
+            "interaction": "column",
+            "property": "CategoryName",
+            "parameterId": "04bc6f76-2d33-4430-8c6a-f8507ab600fe",
+            "disabled": false
+          }
+        ],
+        "forceAxisTicks": false,
+        "drillthrough": [],
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        },
+        "dataPointsTooltip": {
+          "all": false,
+          "limit": 1
+        }
+      }
+    },
+    {
+      "id": "2fc7804d-7378-4e41-b8ec-9c2e27cb64be",
+      "title": "Sales by City",
+      "visualType": "map",
+      "pageId": "0f0a593d-e6db-44fc-b960-7b5da4497e92",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 24,
+        "height": 14
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "b0a4de21-5e9b-4723-bf8a-16c8de0de022"
+      },
+      "visualOptions": {
+        "map__latitudeColumn": "Latitude",
+        "map__longitudeColumn": "Longitude",
+        "map__labelColumn": "TotalSales",
+        "map__sizeColumn": "TotalSales",
+        "map__sizeDisabled": true,
+        "map__geoType": "numeric",
+        "map__geoPointColumn": null
+      }
+    },
+    {
+      "id": "d885e0ac-4bac-4eb0-91a8-a8f63a0e8343",
+      "title": "Last Sale",
+      "visualType": "card",
+      "pageId": "64afd295-ea48-41cb-943a-2d84c9d2e28a",
+      "layout": {
+        "x": 17,
+        "y": 0,
+        "width": 7,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "cb3fab61-f2fa-45df-9952-154c025fc093"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": false,
+        "colorRules": [
+          {
+            "id": "e002908d-a512-4b45-8da7-ba99f233e18b",
+            "ruleType": "colorByCondition",
+            "applyToColumn": null,
+            "hideText": false,
+            "applyTo": "cells",
+            "conditions": [
+              {
+                "operator": ">",
+                "column": null,
+                "values": [
+                  "1000"
+                ]
+              }
+            ],
+            "chainingOperator": "and",
+            "colorStyle": "bold",
+            "color": "green",
+            "tag": "",
+            "icon": "happy",
+            "ruleName": "",
+            "visualType": "card"
+          },
+          {
+            "id": "9f271164-d2f2-4ec8-b8d4-fd663fde4d34",
+            "ruleType": "colorByCondition",
+            "applyToColumn": null,
+            "hideText": false,
+            "applyTo": "cells",
+            "conditions": [
+              {
+                "operator": ">",
+                "column": "TotalSales",
+                "values": [
+                  "0"
+                ]
+              },
+              {
+                "operator": "<",
+                "column": "TotalSales",
+                "values": [
+                  "1000"
+                ]
+              }
+            ],
+            "chainingOperator": "and",
+            "colorStyle": "bold",
+            "color": "yellow",
+            "tag": "",
+            "icon": "emojiNeutral",
+            "ruleName": "",
+            "visualType": "card"
+          }
+        ]
+      }
+    },
+    {
+      "id": "5e6b4023-77e3-4c2f-92a9-b0e25523b09a",
+      "title": "Top 3 stores by Sales",
+      "visualType": "multistat",
+      "pageId": "64afd295-ea48-41cb-943a-2d84c9d2e28a",
+      "layout": {
+        "x": 0,
+        "y": 9,
+        "width": 12,
+        "height": 6
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "0a822e18-b434-4166-9cd8-7ab09b42e1b8"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": "count_",
+        "colorRulesDisabled": true,
+        "multiStat__displayOrientation": "horizontal",
+        "multiStat__labelColumn": "StoreNumber",
+        "multiStat__slot": {
+          "width": 3,
+          "height": 1
+        },
+        "colorRules": []
+      }
+    },
+    {
+      "id": "608cb8da-d661-488b-9434-f98d2af875ab",
+      "title": "Bottom 3 stores by Sales",
+      "visualType": "multistat",
+      "pageId": "64afd295-ea48-41cb-943a-2d84c9d2e28a",
+      "layout": {
+        "x": 12,
+        "y": 9,
+        "width": 12,
+        "height": 6
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "a53c42ce-65d2-4db3-8c1f-6b228464a7aa"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": "count_",
+        "colorRulesDisabled": true,
+        "multiStat__displayOrientation": "horizontal",
+        "multiStat__labelColumn": "StoreNumber",
+        "multiStat__slot": {
+          "width": 3,
+          "height": 1
+        },
+        "colorRules": []
+      }
+    }
+  ],
+  "baseQueries": [
+    {
+      "id": "33b0a052-d91f-4a7d-bb85-e06ecef6020b",
+      "queryId": "0c5e43cf-fc8c-4f47-8f40-df804b224850",
+      "variableName": "SalesBase"
+    }
+  ],
+  "parameters": [
+    {
+      "kind": "duration",
+      "id": "04514250-80f6-40ae-b413-0ba546787fbb",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "_startTime",
+      "endVariableName": "_endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "kind": "kusto-trident",
+      "scopeId": "kusto-trident",
+      "clusterUri": "",
+      "database": "e7912323-05f7-baf1-4be0-f0ba14f7c628",
+      "name": "RetailSales",
+      "id": "1143c3f5-0808-4181-acd8-754129044ec6",
+      "workspace": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Sales Stats",
+      "id": "64afd295-ea48-41cb-943a-2d84c9d2e28a"
+    },
+    {
+      "id": "0f0a593d-e6db-44fc-b960-7b5da4497e92",
+      "name": "Map"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "1143c3f5-0808-4181-acd8-754129044ec6"
+      },
+      "text": "SalesBase\n| summarize count_distinct(OrderKey)",
+      "id": "8f52b583-a4ae-420e-b6cd-990ccea9f8fe",
+      "usedVariables": [
+        "SalesBase"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "1143c3f5-0808-4181-acd8-754129044ec6"
+      },
+      "text": "SalesBase\n| count ",
+      "id": "68c126b3-31da-4986-8fe9-25d48e636576",
+      "usedVariables": [
+        "SalesBase"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "1143c3f5-0808-4181-acd8-754129044ec6"
+      },
+      "text": "SalesBase\n| extend TotalSales = Quantity*UnitPrice\n| summarize round(sum(TotalSales),2)",
+      "id": "8feb9370-631b-4aff-9ccc-a608af622079",
+      "usedVariables": [
+        "SalesBase"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "1143c3f5-0808-4181-acd8-754129044ec6"
+      },
+      "text": "SalesBase\n| extend TotalSales = Quantity*UnitPrice\n| summarize TotalSales = sum(TotalSales) by bin(OrderDate,1m)",
+      "id": "1b7fbcd7-6867-4085-a8e9-1be18cb8ba78",
+      "usedVariables": [
+        "SalesBase"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "598e2c93-22e3-486e-808b-c36f41731e03"
+      },
+      "text": "SalesBase\n| take 200\n| lookup external_table('customer_ex') on $left.CustomerKey==$right.CustomerKey\n| project Continent, City, Country, Latitude, Longitude,Quantity,UnitPrice\n| extend TotalSales = Quantity*UnitPrice\n| summarize TotalSales=sum(TotalSales) by Latitude, Longitude, City,Country,Continent\n",
+      "id": "b0a4de21-5e9b-4723-bf8a-16c8de0de022",
+      "usedVariables": [
+        "SalesBase"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "1143c3f5-0808-4181-acd8-754129044ec6"
+      },
+      "text": "SalesBase\n| extend TotalSales = UnitCost*UnitPrice\n| summarize arg_max(OrderDate,*)\n| summarize TotalSales=round(sum(TotalSales),2) by OrderKey,OrderDate\n\n",
+      "id": "cb3fab61-f2fa-45df-9952-154c025fc093",
+      "usedVariables": [
+        "SalesBase"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "1143c3f5-0808-4181-acd8-754129044ec6"
+      },
+      "text": "SalesBase | summarize count() by StoreNumber=StoreKey\n| top 3 by count_ desc",
+      "id": "0a822e18-b434-4166-9cd8-7ab09b42e1b8",
+      "usedVariables": [
+        "SalesBase"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "1143c3f5-0808-4181-acd8-754129044ec6"
+      },
+      "text": "SalesBase | summarize count() by StoreNumber=StoreKey\n| top 3 by count_ asc ",
+      "id": "a53c42ce-65d2-4db3-8c1f-6b228464a7aa",
+      "usedVariables": [
+        "SalesBase"
+      ]
+    },
+    {
+      "id": "0c5e43cf-fc8c-4f47-8f40-df804b224850",
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "1143c3f5-0808-4181-acd8-754129044ec6"
+      },
+      "text": "SalesSilver\n| where OrderDate between (_startTime .. _endTime)",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "10e3fcf8-4abf-4369-b8bd-ceef5118d06f",
+        "clusterUri": "https://trd-xux0d2mqx3rccjurmr.z3.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "14f7c628-f0ba-4be0-baf1-05f7e7912323",
+        "databaseItemName": "RetailSales"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "7e36c167-cf43-4c4d-828c-c8c92eb58b2a",
+        "content": "SalesRaw\n| take 10\n\n\n.create-or-alter function with (skipvalidation = \"true\") RetailSalesSilverTransformation() {\n    SalesRaw\n    | mv-expand lines\n    | project OrderKey\n        ,OrderDate\n        ,DeliveryDate\n        ,CustomerKey\n        ,StoreKey\n        ,CurrencyCode=tostring(lines.CurrencyCode)\n        ,ExchangeRate=tolong(lines.ExchangeRate)\n        ,LineNumber=tolong(lines.LineNumber)\n        ,NetPrice=toreal(lines.NetPrice)\n        ,ProductKey=tolong(lines.ProductKey)\n        ,Quantity=tolong(lines.Quantity)\n        ,UnitCost=toreal(lines.UnitCost)\n        ,UnitPrice=toreal(lines.UnitPrice)\n}\n\n.set-or-append SalesSilver <|\n  SalesRaw\n    | mv-expand lines\n    | project OrderKey\n        ,OrderDate\n        ,DeliveryDate\n        ,CustomerKey\n        ,StoreKey\n        ,CurrencyCode=tostring(lines.CurrencyCode)\n        ,ExchangeRate=tolong(lines.ExchangeRate)\n        ,LineNumber=tolong(lines.LineNumber)\n        ,NetPrice=toreal(lines.NetPrice)\n        ,ProductKey=tolong(lines.ProductKey)\n        ,Quantity=tolong(lines.Quantity)\n        ,UnitCost=toreal(lines.UnitCost)\n        ,UnitPrice=toreal(lines.UnitPrice)\n        | where 1==0\n\n\n\n// IsEnabled (bool) - States if update policy is true - enabled, or false - disabled\n// source (string) - Name of the table that triggers invocation of the update policy\n// Query (string) - A query used to produce data for the update\n// IsTransactional (bool) - States if the update policy is transactional or not, default is false). If transactional and the update policy fails, the source table is not updated.\n// PropagateIngestionProperties (bool) - States if properties specified during ingestion to the source table, such as extent tags and creation time, apply to the target table\n// read more - https://aka.ms/updatepolicy\n\n.alter table SalesSilver policy update\n```[{\n    \"IsEnabled\": 1,\n    \"Source\": \"SalesRaw\",\n    \"Query\": \"RetailSalesSilverTransformation()\",\n    \"IsTransactional\": 1,\n    \"PropagateIngestionProperties\": 0\n}]```\n\nSalesSilver\n| take 10\n\n\n\n.create materialized-view SalesGold on table SalesSilver\n{\n    SalesSilver\n    | summarize TotalSales=sum(UnitPrice*Quantity) by bin(OrderDate,1d)\n}\n\nSalesGold\n\n\n\n",
+        "title": "IngestionSetup",
+        "dataSourceId": "10e3fcf8-4abf-4369-b8bd-ceef5118d06f"
+      }
+    ]
+  }
+}
