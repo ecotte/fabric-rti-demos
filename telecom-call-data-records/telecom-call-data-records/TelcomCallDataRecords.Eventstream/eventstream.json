@@ -17,7 +17,7 @@
         "workspaceId": "00000000-0000-0000-0000-000000000000",
         "itemId": "602e8fc0-3a1a-b4dc-4de0-09ad5e01108e",
         "tableName": "cdr_raw",
-        "connectionName": "TelecomCallDataRecords",
+        "connectionName": "TelcoStream_9alq2v",
         "mappingRuleName": "cdr_raw_mapping"
       },
       "inputNodes": [
@@ -50,5 +50,4 @@
   ],
   "operators": [],
   "compatibilityLevel": "1.1"
-
 }
