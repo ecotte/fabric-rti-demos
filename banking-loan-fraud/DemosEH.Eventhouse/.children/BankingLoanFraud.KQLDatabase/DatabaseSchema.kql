@@ -1,0 +1,13 @@
+// KQL script
+// Use management commands in this script to configure your database items, such as tables, functions, materialized views, and more.
+
+
+.create-merge table bronze_banking (customer_id:string, transaction_id:guid, loan_amount:int, status:string, credit_score:int, timestamp:datetime, country:string, device_type:string, ip_address:string, browser:string, is_fraud_suspected:bool, fraud_reasons:dynamic) 
+.create-or-alter table bronze_banking ingestion json mapping 'bronze_banking_mapping'
+```
+[{"Properties":{"Path":"$['customer_id']"},"column":"customer_id","datatype":""},{"Properties":{"Path":"$['transaction_id']"},"column":"transaction_id","datatype":""},{"Properties":{"Path":"$['loan_amount']"},"column":"loan_amount","datatype":""},{"Properties":{"Path":"$['status']"},"column":"status","datatype":""},{"Properties":{"Path":"$['credit_score']"},"column":"credit_score","datatype":""},{"Properties":{"Path":"$['timestamp']"},"column":"timestamp","datatype":""},{"Properties":{"Path":"$['country']"},"column":"country","datatype":""},{"Properties":{"Path":"$['device_type']"},"column":"device_type","datatype":""},{"Properties":{"Path":"$['ip_address']"},"column":"ip_address","datatype":""},{"Properties":{"Path":"$['browser']"},"column":"browser","datatype":""},{"Properties":{"Path":"$['is_fraud_suspected']"},"column":"is_fraud_suspected","datatype":""},{"Properties":{"Path":"$['fraud_reasons']"},"column":"fraud_reasons","datatype":""}]
+```
+.create-or-alter table bronze_banking ingestion json mapping 'bronze_banking_mapping_1'
+```
+[{"Properties":{"Path":"$['customer_id']"},"column":"customer_id","datatype":""},{"Properties":{"Path":"$['transaction_id']"},"column":"transaction_id","datatype":""},{"Properties":{"Path":"$['loan_amount']"},"column":"loan_amount","datatype":""},{"Properties":{"Path":"$['status']"},"column":"status","datatype":""},{"Properties":{"Path":"$['credit_score']"},"column":"credit_score","datatype":""},{"Properties":{"Path":"$['timestamp']"},"column":"timestamp","datatype":""},{"Properties":{"Path":"$['country']"},"column":"country","datatype":""},{"Properties":{"Path":"$['device_type']"},"column":"device_type","datatype":""},{"Properties":{"Path":"$['ip_address']"},"column":"ip_address","datatype":""},{"Properties":{"Path":"$['browser']"},"column":"browser","datatype":""},{"Properties":{"Path":"$['is_fraud_suspected']"},"column":"is_fraud_suspected","datatype":""},{"Properties":{"Path":"$['fraud_reasons']"},"column":"fraud_reasons","datatype":""}]
+```

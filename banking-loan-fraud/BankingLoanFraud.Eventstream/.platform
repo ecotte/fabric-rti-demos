@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventstream",
+    "displayName": "BankingLoanFraud"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "87c721d8-de7f-bbd0-45c8-c43a008588ec"
+  }
+}
