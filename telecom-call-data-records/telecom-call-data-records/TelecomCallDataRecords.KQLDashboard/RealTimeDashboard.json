@@ -1,0 +1,323 @@
+{
+  "schema_version": 67,
+  "tiles": [
+    {
+      "id": "122e0ac7-47fb-4529-9e63-bd4957130a6d",
+      "title": "Status",
+      "visualType": "pie",
+      "pageId": "ceaf83ba-2494-491b-8d32-1272c905432a",
+      "layout": {
+        "x": 18,
+        "y": 6,
+        "width": 6,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "edf562b2-3bf4-4bb6-a6e9-8c7f584cd11d"
+      },
+      "visualOptions": {
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "labelDisabled": false,
+        "pie__label": [
+          "name",
+          "percentage"
+        ],
+        "tooltipDisabled": false,
+        "pie__tooltip": [
+          "name",
+          "percentage",
+          "value"
+        ],
+        "pie__orderBy": "size",
+        "pie__kind": "pie",
+        "pie__topNSlices": null,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "ba6d29d0-be52-49a8-b9e6-f495377457d4",
+      "title": "Call Types",
+      "visualType": "pie",
+      "pageId": "ceaf83ba-2494-491b-8d32-1272c905432a",
+      "layout": {
+        "x": 18,
+        "y": 0,
+        "width": 6,
+        "height": 6
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "4e2f0394-bcd2-46c2-bb8b-72d5166ffaf1"
+      },
+      "visualOptions": {
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "labelDisabled": false,
+        "pie__label": [
+          "name",
+          "percentage"
+        ],
+        "tooltipDisabled": false,
+        "pie__tooltip": [
+          "name",
+          "percentage",
+          "value"
+        ],
+        "pie__orderBy": "size",
+        "pie__kind": "pie",
+        "pie__topNSlices": null,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "ec9221be-66b7-4e7b-a764-ce9c8c63cae9",
+      "title": "Total Calls",
+      "visualType": "card",
+      "pageId": "ceaf83ba-2494-491b-8d32-1272c905432a",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 6,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "866b0176-acb4-4de2-a054-c923626d1f95"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": false,
+        "colorRules": []
+      }
+    },
+    {
+      "id": "c701437b-eb22-4f22-bfcb-d5ed3d28ff26",
+      "title": "Dropped calls",
+      "visualType": "card",
+      "pageId": "ceaf83ba-2494-491b-8d32-1272c905432a",
+      "layout": {
+        "x": 6,
+        "y": 0,
+        "width": 6,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "1d390a66-a914-414d-8de3-c53dfc8dc177"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": false,
+        "colorRules": []
+      }
+    },
+    {
+      "id": "acc19d4a-870a-4db3-98ef-195a761ea0ad",
+      "title": "Call drops %",
+      "visualType": "card",
+      "pageId": "ceaf83ba-2494-491b-8d32-1272c905432a",
+      "layout": {
+        "x": 12,
+        "y": 0,
+        "width": 6,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "b289ad79-8121-4ada-9bb2-3c46d7b430bf"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": false,
+        "colorRules": []
+      }
+    },
+    {
+      "id": "a113204b-1be2-4ea5-b0d9-31ccb28f15fe",
+      "title": "Calls in Area",
+      "visualType": "map",
+      "pageId": "ceaf83ba-2494-491b-8d32-1272c905432a",
+      "layout": {
+        "x": 0,
+        "y": 10,
+        "width": 18,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "258593ab-af87-4079-a72b-bdd06b559b3a"
+      },
+      "visualOptions": {
+        "map__latitudeColumn": null,
+        "map__longitudeColumn": null,
+        "map__labelColumn": null,
+        "map__sizeColumn": null,
+        "map__sizeDisabled": false,
+        "map__geoType": "infer",
+        "map__geoPointColumn": null
+      }
+    },
+    {
+      "id": "e94b88f3-a1fc-4c14-b7d8-99ea8a7f09f4",
+      "title": "Calls over time",
+      "visualType": "area",
+      "pageId": "ceaf83ba-2494-491b-8d32-1272c905432a",
+      "layout": {
+        "x": 0,
+        "y": 3,
+        "width": 18,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "73a2f6dd-c483-4b2e-a372-6b1ffe7d0c98"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "forceAxisTicks": false,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    }
+  ],
+  "baseQueries": [],
+  "parameters": [
+    {
+      "kind": "duration",
+      "id": "89ae9684-cc4f-410b-8782-e54d5d8ab051",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "_startTime",
+      "endVariableName": "_endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "a7fb01c2-9c42-47ff-ae8b-83245b738a6c",
+      "kind": "kusto-trident",
+      "scopeId": "kusto-trident",
+      "clusterUri": "",
+      "database": "602e8fc0-3a1a-b4dc-4de0-09ad5e01108e",
+      "name": "TelecomCallDataRecords",
+      "workspace": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "id": "ceaf83ba-2494-491b-8d32-1272c905432a"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a7fb01c2-9c42-47ff-ae8b-83245b738a6c"
+      },
+      "text": "cdr_raw\n| summarize count() by status\n\n",
+      "id": "edf562b2-3bf4-4bb6-a6e9-8c7f584cd11d",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a7fb01c2-9c42-47ff-ae8b-83245b738a6c"
+      },
+      "text": "cdr_raw\n| summarize count() by call_type\n\n",
+      "id": "4e2f0394-bcd2-46c2-bb8b-72d5166ffaf1",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a7fb01c2-9c42-47ff-ae8b-83245b738a6c"
+      },
+      "text": "// Please enter your KQL query (Example):\ncdr_raw\n| count ",
+      "id": "866b0176-acb4-4de2-a054-c923626d1f95",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a7fb01c2-9c42-47ff-ae8b-83245b738a6c"
+      },
+      "text": "// Please enter your KQL query (Example):\n\ncdr_raw\n| where status == \"Dropped\"\n| summarize count()",
+      "id": "1d390a66-a914-414d-8de3-c53dfc8dc177",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a7fb01c2-9c42-47ff-ae8b-83245b738a6c"
+      },
+      "text": "// Please enter your KQL query (Example):\nlet droppedcalls = todouble(toscalar(cdr_raw | where status == \"Dropped\" | count));\nlet totalcalls = toscalar(cdr_raw | count );\nprint DroppedPercentage = round(toreal(droppedcalls/totalcalls),5)*100",
+      "id": "b289ad79-8121-4ada-9bb2-3c46d7b430bf",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a7fb01c2-9c42-47ff-ae8b-83245b738a6c"
+      },
+      "text": "// Please enter your KQL query (Example):\ncdr_raw\n| project tower_longitude, tower_latitude\n| summarize count() by hash=geo_point_to_s2cell(tower_longitude, tower_latitude,4)\n| project geo_s2cell_to_central_point(hash), count_\n",
+      "id": "258593ab-af87-4079-a72b-bdd06b559b3a",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "a7fb01c2-9c42-47ff-ae8b-83245b738a6c"
+      },
+      "text": "// Please enter your KQL query (Example):\ncdr_raw\n| summarize count() by bin(call_start_time,10s), status\n",
+      "id": "73a2f6dd-c483-4b2e-a372-6b1ffe7d0c98",
+      "usedVariables": []
+    }
+  ]
+}

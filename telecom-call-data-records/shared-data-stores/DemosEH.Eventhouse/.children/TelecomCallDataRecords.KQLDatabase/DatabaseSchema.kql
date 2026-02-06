@@ -1,0 +1,9 @@
+// KQL script
+// Use management commands in this script to configure your database items, such as tables, functions, materialized views, and more.
+
+
+.create-merge table cdr_raw (call_id:guid, subscriber_id:string, call_start_time:datetime, call_end_time:datetime, duration_seconds:int, call_type:string, status:string, tower_latitude:real, tower_longitude:real, call_quality:int) 
+.create-or-alter table cdr_raw ingestion json mapping 'cdr_raw_mapping'
+```
+[{"Properties":{"Path":"$['call_id']"},"column":"call_id","datatype":""},{"Properties":{"Path":"$['subscriber_id']"},"column":"subscriber_id","datatype":""},{"Properties":{"Path":"$['call_start_time']"},"column":"call_start_time","datatype":""},{"Properties":{"Path":"$['call_end_time']"},"column":"call_end_time","datatype":""},{"Properties":{"Path":"$['duration_seconds']"},"column":"duration_seconds","datatype":""},{"Properties":{"Path":"$['call_type']"},"column":"call_type","datatype":""},{"Properties":{"Path":"$['status']"},"column":"status","datatype":""},{"Properties":{"Path":"$['tower_latitude']"},"column":"tower_latitude","datatype":""},{"Properties":{"Path":"$['tower_longitude']"},"column":"tower_longitude","datatype":""},{"Properties":{"Path":"$['call_quality']"},"column":"call_quality","datatype":""}]
+```
