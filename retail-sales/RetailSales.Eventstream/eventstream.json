@@ -1,0 +1,45 @@
+{
+  "sources": [
+    {
+      "id": "ad724df4-dfd8-4025-9a4e-ca47599f4922",
+      "name": "CustomEndpoint-Source",
+      "type": "CustomEndpoint",
+      "properties": {}
+    }
+  ],
+  "destinations": [
+    {
+      "id": "190d5dd5-7752-4210-b423-5ddfe7cd38e7",
+      "name": "Eventhouse",
+      "type": "Eventhouse",
+      "properties": {
+        "dataIngestionMode": "DirectIngestion",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "e7912323-05f7-baf1-4be0-f0ba14f7c628",
+        "tableName": "SalesRaw",
+        "connectionName": "RetailSales",
+        "mappingRuleName": "SalesRaw_mapping"
+      },
+      "inputNodes": [
+        {
+          "name": "RetailSales-stream"
+        }
+      ]
+    }
+  ],
+  "streams": [
+    {
+      "id": "08998792-bde3-4bc9-abf7-eec30b941738",
+      "name": "RetailSales-stream",
+      "type": "DefaultStream",
+      "properties": {},
+      "inputNodes": [
+        {
+          "name": "CustomEndpoint-Source"
+        }
+      ]
+    }
+  ],
+  "operators": [],
+  "compatibilityLevel": "1.1"
+}
