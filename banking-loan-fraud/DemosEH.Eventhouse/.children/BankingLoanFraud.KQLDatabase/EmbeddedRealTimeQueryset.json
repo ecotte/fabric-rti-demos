@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "4f8a97ff-d2dc-45bc-ba41-7fdf37059571",
+        "clusterUri": "https://trd-esjdhnzxwpz139b7gd.z3.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "ef6909cb-2a5f-42df-9105-73bc7c27678e",
+        "databaseItemName": "BankingLoanFraud"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "bbfddb08-0145-468d-9c7b-c86e29c5da4d",
+        "content": "bronze_banking\n| take 10\n\nbronze_banking\n| summarize count() by country\n\n\nbronze_banking\n| summarize count() by browser\n\nbronze_banking\n| summarize count() by device_type\n\nbronze_banking\n| summarize count() by bin(timestamp,5m)\n\n\n.show ingestion failures ",
+        "title": "Tab",
+        "dataSourceId": "4f8a97ff-d2dc-45bc-ba41-7fdf37059571"
+      }
+    ]
+  }
+}
