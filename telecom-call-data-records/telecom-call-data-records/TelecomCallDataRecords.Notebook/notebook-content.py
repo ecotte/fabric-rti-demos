@@ -8,12 +8,12 @@
 # META   },
 # META   "dependencies": {
 # META     "lakehouse": {
-# META       "default_lakehouse": "848975e8-25ac-4615-9f56-c9377414b801",
-# META       "default_lakehouse_name": "Telco_Lakehouse",
+# META       "default_lakehouse": "21997ac1-5ea0-4f9d-9b1a-1d6e9c6cfd9e",
+# META       "default_lakehouse_name": "CDR_Lakehouse",
 # META       "default_lakehouse_workspace_id": "79a3f7b0-348e-42c8-8c14-f3bb8f528c3c",
 # META       "known_lakehouses": [
 # META         {
-# META           "id": "848975e8-25ac-4615-9f56-c9377414b801"
+# META           "id": "21997ac1-5ea0-4f9d-9b1a-1d6e9c6cfd9e"
 # META         }
 # META       ]
 # META     }
@@ -55,6 +55,10 @@ from azure.eventhub import EventHubProducerClient, EventData
 import os
 import socket
 import random
+import datetime
+import uuid
+import time
+from datetime import datetime, timedelta, timezone
 from random import randrange
 import sempy_labs as labs
 import sempy_labs.variable_library as sempy_variable_library
@@ -69,7 +73,7 @@ import sempy_labs.eventstream as sempy_eventstream
 
 # CELL ********************
 
-eventstream = "TelecomeCallDataRecords"
+eventstream = "TelcomCallDataRecords"
 eventstream_source_name = "CustomEndpoint-Source"
 
 es_topology = sempy_eventstream.get_eventstream_topology(eventstream=eventstream)
@@ -109,6 +113,10 @@ def sendToEventsHub(jsonEvent, producer):
 
 # CELL ********************
 
+#### ATTENTION: AI-generated code can include errors or operations you didn't intend. Review the code in this cell carefully before running it.
+
+
+
 # South Africa geographic boundaries
 # Latitude: approximately -22 to -35 (southern hemisphere)
 # Longitude: approximately 16 to 33
@@ -125,19 +133,19 @@ STATUS_WEIGHTS = [0.85, 0.08, 0.07]  # 85% completed, 8% failed, 7% dropped
 
 def generate_cdr():
     """Generate a single Call Data Record"""
-    
-    # Generate call timing
-    call_start = datetime.utcnow()
+
+    # Use timezone-aware UTC datetime
+    call_start = datetime.now(timezone.utc)
     duration_seconds = random.randint(5, 3600)  # 5 seconds to 1 hour
     call_end = call_start + timedelta(seconds=duration_seconds)
-    
+
     # Generate tower location within South Africa
     tower_latitude = round(random.uniform(SA_LAT_MIN, SA_LAT_MAX), 6)
     tower_longitude = round(random.uniform(SA_LON_MIN, SA_LON_MAX), 6)
-    
+
     # Generate status with weighted probability
     status = random.choices(STATUS_OPTIONS, weights=STATUS_WEIGHTS, k=1)[0]
-    
+
     # Adjust duration for failed/dropped calls
     if status == "Failed":
         duration_seconds = 0
@@ -145,7 +153,7 @@ def generate_cdr():
     elif status == "Dropped":
         duration_seconds = random.randint(5, duration_seconds // 2) if duration_seconds > 10 else duration_seconds
         call_end = call_start + timedelta(seconds=duration_seconds)
-    
+
     # Quality tends to be lower for dropped calls
     if status == "Dropped":
         call_quality = random.randint(1, 5)
@@ -153,12 +161,12 @@ def generate_cdr():
         call_quality = random.randint(1, 3)
     else:
         call_quality = random.randint(1, 10)
-    
+
     cdr = {
         "call_id": str(uuid.uuid4()),
         "subscriber_id": f"SUB-{random.randint(100000, 999999)}",
-        "call_start_time": call_start.isoformat() + "Z",
-        "call_end_time": call_end.isoformat() + "Z",
+        "call_start_time": call_start.isoformat().replace("+00:00", "Z"),
+        "call_end_time": call_end.isoformat().replace("+00:00", "Z"),
         "duration_seconds": duration_seconds,
         "call_type": random.choice(CALL_TYPES),
         "status": status,
@@ -166,7 +174,7 @@ def generate_cdr():
         "tower_longitude": tower_longitude,
         "call_quality": call_quality
     }
-    
+
     return cdr
 
 # Test generating a single CDR
@@ -259,17 +267,56 @@ def stream_cdrs_to_eventhub(records_per_second=1, total_records=None, duration_s
 
 # CELL ********************
 
-# Option 2: Start continuous streaming
-# This will stream CDR data to Event Hub at the specified rate
+#### ATTENTION: AI-generated code can include errors or operations you didn't intend. Review the code in this cell carefully before running it.
 
-# Example: Stream 5 records per second for 60 seconds
-stream_cdrs_to_eventhub(records_per_second=5, duration_seconds=1000)
+def stream_cdrs_to_eventhub_with_send(records_per_second=1, total_records=None, duration_seconds=None, producer=None):
+    """
+    Stream CDR data to Event Hub using the sendToEventsHub function.
 
-# Example: Stream 2 records per second, total of 100 records
-# stream_cdrs_to_eventhub(records_per_second=2, total_records=100)
+    Args:
+        records_per_second: Number of CDRs to generate per second
+        total_records: Total number of records to send (None for unlimited)
+        duration_seconds: Duration to run in seconds (None for unlimited)
+        producer: An instance of EventHubProducerClient (must be provided)
+    """
+    if producer is None:
+        raise ValueError("You must supply a valid EventHubProducerClient instance as 'producer'.")
 
-# Example: Continuous streaming at 1 record per second (press Ctrl+C to stop)
-# stream_cdrs_to_eventhub(records_per_second=1)
+    start_time = time.time()
+    records_sent = 0
+    interval = 1.0 / records_per_second
+
+    print(f"Starting CDR streaming at {records_per_second} records/second...")
+    print("Press Ctrl+C to stop\n")
+
+    try:
+        while True:
+            # Check stop conditions
+            if total_records and records_sent >= total_records:
+                print(f"\nReached target of {total_records} records. Stopping.")
+                break
+            if duration_seconds and (time.time() - start_time) >= duration_seconds:
+                print(f"\nReached duration of {duration_seconds} seconds. Stopping.")
+                break
+
+            # Generate and send CDR
+            cdr = generate_cdr()
+            sendToEventsHub(cdr, producer)
+            records_sent += 1
+            print(f"[{records_sent}] Call ID: {cdr['call_id'][:8]}... | "
+                  f"Type: {cdr['call_type']:6} | Status: {cdr['status']:9} | "
+                  f"Quality: {cdr['call_quality']:2} | "
+                  f"Location: ({cdr['tower_latitude']:.4f}, {cdr['tower_longitude']:.4f})")
+
+            time.sleep(interval)
+
+    except KeyboardInterrupt:
+        print(f"\n\nStreaming stopped by user. Total records sent: {records_sent}")
+
+    return records_sent
+
+# Example usage: (Assumes 'producer_events' is your initialized EventHubProducerClient)
+stream_cdrs_to_eventhub_with_send(records_per_second=5, duration_seconds=1000, producer=producer_events)
 
 # METADATA ********************
 
