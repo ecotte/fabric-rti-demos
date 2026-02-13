@@ -1,0 +1,30 @@
+// KQL script
+// Use management commands in this script to configure your database items, such as tables, functions, materialized views, and more.
+
+
+.create-merge table SalesRaw (OrderKey:guid, OrderDate:datetime, DeliveryDate:datetime, CustomerKey:int, StoreKey:int, lines:dynamic) 
+.create-or-alter table SalesRaw ingestion json mapping 'SalesRaw_mapping'
+```
+[{"Properties":{"Path":"$['OrderKey']"},"column":"OrderKey","datatype":""},{"Properties":{"Transform":"DateTimeFromUnixSeconds","Path":"$['OrderDate']"},"column":"OrderDate","datatype":""},{"Properties":{"Transform":"DateTimeFromUnixSeconds","Path":"$['DeliveryDate']"},"column":"DeliveryDate","datatype":""},{"Properties":{"Path":"$['CustomerKey']"},"column":"CustomerKey","datatype":""},{"Properties":{"Path":"$['StoreKey']"},"column":"StoreKey","datatype":""},{"Properties":{"Path":"$['lines']"},"column":"lines","datatype":""}]
+```
+.create-merge table SalesSilver (OrderKey:guid, OrderDate:datetime, DeliveryDate:datetime, CustomerKey:int, StoreKey:int, CurrencyCode:string, ExchangeRate:long, LineNumber:long, NetPrice:real, ProductKey:long, Quantity:long, UnitCost:real, UnitPrice:real) 
+.create-or-alter function with (skipvalidation = "true") RetailSalesSilverTransformation() {
+    SalesRaw
+    | mv-expand lines
+    | project OrderKey
+        ,OrderDate
+        ,DeliveryDate
+        ,CustomerKey
+        ,StoreKey
+        ,CurrencyCode=tostring(lines.CurrencyCode)
+        ,ExchangeRate=tolong(lines.ExchangeRate)
+        ,LineNumber=tolong(lines.LineNumber)
+        ,NetPrice=toreal(lines.NetPrice)
+        ,ProductKey=tolong(lines.ProductKey)
+        ,Quantity=tolong(lines.Quantity)
+        ,UnitCost=toreal(lines.UnitCost)
+        ,UnitPrice=toreal(lines.UnitPrice)
+}
+.create-or-alter materialized-view  SalesGold on table SalesSilver { SalesSilver
+    | summarize TotalSales=sum(UnitPrice*Quantity) by bin(OrderDate,1d) }
+.alter table SalesSilver policy update "[{\"IsEnabled\":true,\"Source\":\"SalesRaw\",\"Query\":\"RetailSalesSilverTransformation()\",\"IsTransactional\":true,\"PropagateIngestionProperties\":false,\"ManagedIdentity\":null}]"
