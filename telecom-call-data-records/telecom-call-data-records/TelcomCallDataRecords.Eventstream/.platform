@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventstream",
+    "displayName": "TelecomCallDataRecordsStream"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7d7aed6c-6c77-a555-49dd-789f53659fd8"
+  }
+}

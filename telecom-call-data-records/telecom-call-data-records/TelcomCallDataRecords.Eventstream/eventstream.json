@@ -1,0 +1,53 @@
+{
+  "sources": [
+    {
+      "id": "985c794e-ff4f-4541-b89d-da061599ea67",
+      "name": "CustomEndpoint-Source",
+      "type": "CustomEndpoint",
+      "properties": {}
+    }
+  ],
+  "destinations": [
+    {
+      "id": "da9d6401-26b9-477d-bcc2-4b854ba1c43d",
+      "name": "Eventhouse",
+      "type": "Eventhouse",
+      "properties": {
+        "dataIngestionMode": "DirectIngestion",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "602e8fc0-3a1a-b4dc-4de0-09ad5e01108e",
+        "tableName": "cdr_raw",
+        "connectionName": "TelcoStream_9alq2v",
+        "mappingRuleName": "cdr_raw_mapping"
+      },
+      "inputNodes": [
+        {
+          "name": "TelcoStream-stream"
+        }
+      ],
+      "inputSchemas": [
+        {
+          "name": "TelcoStream-stream",
+          "schema": {
+            "columns": []
+          }
+        }
+      ]
+    }
+  ],
+  "streams": [
+    {
+      "id": "74834898-0dc3-44c7-b951-3c46a0ea9de4",
+      "name": "TelcoStream-stream",
+      "type": "DefaultStream",
+      "properties": {},
+      "inputNodes": [
+        {
+          "name": "CustomEndpoint-Source"
+        }
+      ]
+    }
+  ],
+  "operators": [],
+  "compatibilityLevel": "1.1"
+}
