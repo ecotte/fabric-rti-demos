@@ -1,0 +1,446 @@
+{
+  "schema_version": 67,
+  "tiles": [
+    {
+      "id": "9f4148a3-0680-4609-8dce-f5fa8edcbe7f",
+      "title": "Transactions by Country",
+      "visualType": "pie",
+      "pageId": "494bba89-05c2-4944-819d-2ac5ff8f8951",
+      "layout": {
+        "x": 14,
+        "y": 3,
+        "width": 5,
+        "height": 6
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "f3a6204c-17c4-4e7e-a6c8-81486ac25698"
+      },
+      "visualOptions": {
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "labelDisabled": false,
+        "pie__label": [
+          "name",
+          "percentage"
+        ],
+        "tooltipDisabled": false,
+        "pie__tooltip": [
+          "name",
+          "percentage",
+          "value"
+        ],
+        "pie__orderBy": "size",
+        "pie__kind": "pie",
+        "pie__topNSlices": null,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "90be6fe8-4af1-4718-b2ad-2367e305640d",
+      "title": "Transactions by Browser",
+      "visualType": "pie",
+      "pageId": "494bba89-05c2-4944-819d-2ac5ff8f8951",
+      "layout": {
+        "x": 19,
+        "y": 4,
+        "width": 5,
+        "height": 5
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "4382f9e4-51e0-4bea-b4df-b65cfffadc94"
+      },
+      "visualOptions": {
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "labelDisabled": false,
+        "pie__label": [
+          "name",
+          "percentage"
+        ],
+        "tooltipDisabled": false,
+        "pie__tooltip": [
+          "name",
+          "percentage",
+          "value"
+        ],
+        "pie__orderBy": "size",
+        "pie__kind": "pie",
+        "pie__topNSlices": null,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "6519d69e-b015-4d44-800a-ca577867876f",
+      "title": "Transactions by Device",
+      "visualType": "pie",
+      "pageId": "494bba89-05c2-4944-819d-2ac5ff8f8951",
+      "layout": {
+        "x": 19,
+        "y": 0,
+        "width": 5,
+        "height": 4
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "59b8b919-7e7b-4ad5-96bc-d5a00a992fef"
+      },
+      "visualOptions": {
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "labelDisabled": false,
+        "pie__label": [
+          "name",
+          "percentage"
+        ],
+        "tooltipDisabled": false,
+        "pie__tooltip": [
+          "name",
+          "percentage",
+          "value"
+        ],
+        "pie__orderBy": "size",
+        "pie__kind": "pie",
+        "pie__topNSlices": null,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "1183bc06-6557-4a70-88fb-e72fc8e0a3b5",
+      "title": "Transactions Over Time",
+      "visualType": "line",
+      "pageId": "494bba89-05c2-4944-819d-2ac5ff8f8951",
+      "layout": {
+        "x": 0,
+        "y": 3,
+        "width": 7,
+        "height": 6
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "3dcd9bdd-759f-4341-92cf-1bdb74fd5c94"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "forceAxisTicks": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    },
+    {
+      "id": "1054e7e2-da61-4aab-b022-cf80c97febfc",
+      "title": "Total Transactions",
+      "visualType": "card",
+      "pageId": "494bba89-05c2-4944-819d-2ac5ff8f8951",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 6,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "67cb6931-aaf4-4738-a66d-82e70cc55cb3"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": false,
+        "colorRules": []
+      }
+    },
+    {
+      "id": "581768e1-1746-49b2-916a-c8aa515bd714",
+      "title": "Fraud Transactions",
+      "visualType": "card",
+      "pageId": "494bba89-05c2-4944-819d-2ac5ff8f8951",
+      "layout": {
+        "x": 6,
+        "y": 0,
+        "width": 6,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "49bc5b50-f6fa-409e-a7c0-7455e786acdf"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": false,
+        "colorRules": []
+      }
+    },
+    {
+      "id": "85871527-ba01-41a4-aec9-72494613d6d8",
+      "title": "Fraud Transactions",
+      "visualType": "card",
+      "pageId": "494bba89-05c2-4944-819d-2ac5ff8f8951",
+      "layout": {
+        "x": 12,
+        "y": 0,
+        "width": 7,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "61e69491-5b09-4863-a017-b2346394cbc6"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": false,
+        "colorRules": [
+          {
+            "id": "b501bdd1-6783-4f82-aeca-75ad5a30a22a",
+            "ruleType": "colorByCondition",
+            "applyToColumn": null,
+            "hideText": false,
+            "applyTo": "cells",
+            "conditions": [
+              {
+                "operator": ">",
+                "column": "FraudPercentage",
+                "values": [
+                  "50"
+                ]
+              }
+            ],
+            "chainingOperator": "and",
+            "colorStyle": "bold",
+            "color": "red",
+            "tag": "",
+            "icon": "warning",
+            "ruleName": "",
+            "visualType": "card"
+          },
+          {
+            "id": "33ce605d-1345-44f6-a6de-badf6e743e33",
+            "ruleType": "colorByCondition",
+            "applyToColumn": null,
+            "hideText": false,
+            "applyTo": "cells",
+            "conditions": [
+              {
+                "operator": "<=",
+                "column": "FraudPercentage",
+                "values": [
+                  "50"
+                ]
+              }
+            ],
+            "chainingOperator": "and",
+            "colorStyle": "bold",
+            "color": "yellow",
+            "tag": "",
+            "icon": "warning",
+            "ruleName": "",
+            "visualType": "card"
+          },
+          {
+            "id": "1af5cf2d-6e88-4b16-9656-42f0869eceb7",
+            "ruleType": "colorByCondition",
+            "applyToColumn": null,
+            "hideText": false,
+            "applyTo": "cells",
+            "conditions": [
+              {
+                "operator": "<=",
+                "column": "FraudPercentage",
+                "values": [
+                  "20"
+                ]
+              }
+            ],
+            "chainingOperator": "and",
+            "colorStyle": "bold",
+            "color": "green",
+            "tag": "",
+            "icon": "completed",
+            "ruleName": "",
+            "visualType": "card"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b146a4cd-6888-46d0-9393-ddf0317d3208",
+      "title": "Status count",
+      "visualType": "heatmap",
+      "pageId": "494bba89-05c2-4944-819d-2ac5ff8f8951",
+      "layout": {
+        "x": 7,
+        "y": 3,
+        "width": 7,
+        "height": 6
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "5aa1539b-f382-4ce7-a339-6dab79615217"
+      },
+      "visualOptions": {
+        "xColumn": null,
+        "yColumn": null,
+        "xColumnTitle": "",
+        "yColumnTitle": "",
+        "heatMap__dataColumn": null,
+        "heatMap__colorPaletteKey": "blue"
+      }
+    }
+  ],
+  "baseQueries": [],
+  "parameters": [
+    {
+      "kind": "duration",
+      "id": "92d0e7d1-17cd-4fe7-b442-ddbbb139f1fe",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "_startTime",
+      "endVariableName": "_endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "0de5ae26-2290-4a0f-a6cf-4b684c470920",
+      "kind": "kusto-trident",
+      "scopeId": "kusto-trident",
+      "clusterUri": "",
+      "database": "7c27678e-73bc-9105-42df-2a5fef6909cb",
+      "name": "BankingLoanFraud",
+      "workspace": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "id": "494bba89-05c2-4944-819d-2ac5ff8f8951"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "0de5ae26-2290-4a0f-a6cf-4b684c470920"
+      },
+      "text": "bronze_banking\n| summarize count() by country\n\n",
+      "id": "f3a6204c-17c4-4e7e-a6c8-81486ac25698",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "0de5ae26-2290-4a0f-a6cf-4b684c470920"
+      },
+      "text": "bronze_banking\n| summarize count() by browser\n\n",
+      "id": "4382f9e4-51e0-4bea-b4df-b65cfffadc94",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "0de5ae26-2290-4a0f-a6cf-4b684c470920"
+      },
+      "text": "bronze_banking\n| summarize count() by device_type\n\n",
+      "id": "59b8b919-7e7b-4ad5-96bc-d5a00a992fef",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "0de5ae26-2290-4a0f-a6cf-4b684c470920"
+      },
+      "text": "bronze_banking\n| summarize count() by bin(timestamp,5m)\n\n",
+      "id": "3dcd9bdd-759f-4341-92cf-1bdb74fd5c94",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "0de5ae26-2290-4a0f-a6cf-4b684c470920"
+      },
+      "text": "// Please enter your KQL query (Example):\nbronze_banking\n| count \n",
+      "id": "67cb6931-aaf4-4738-a66d-82e70cc55cb3",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "0de5ae26-2290-4a0f-a6cf-4b684c470920"
+      },
+      "text": "// Please enter your KQL query (Example):\nbronze_banking\n| where is_fraud_suspected == true \n| count \n",
+      "id": "49bc5b50-f6fa-409e-a7c0-7455e786acdf",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "0de5ae26-2290-4a0f-a6cf-4b684c470920"
+      },
+      "text": "// Please enter your KQL query (Example):\nlet totaltransactions = toscalar(bronze_banking | count);\nlet fraudtransactions = toreal(toscalar(bronze_banking\n                                    | where is_fraud_suspected == true \n                                    | count)); \nprint FraudPercentage= round((fraudtransactions/totaltransactions)*100,2)\n",
+      "id": "61e69491-5b09-4863-a017-b2346394cbc6",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "0de5ae26-2290-4a0f-a6cf-4b684c470920"
+      },
+      "text": "// Please enter your KQL query (Example):\nbronze_banking\n| summarize count() by status\n",
+      "id": "5aa1539b-f382-4ce7-a339-6dab79615217",
+      "usedVariables": []
+    }
+  ]
+}

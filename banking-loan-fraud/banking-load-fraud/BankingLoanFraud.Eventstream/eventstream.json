@@ -1,0 +1,45 @@
+{
+  "sources": [
+    {
+      "id": "e15e8f7e-98e0-4a02-aa83-843976b699c7",
+      "name": "CustomEndpoint-Source",
+      "type": "CustomEndpoint",
+      "properties": {}
+    }
+  ],
+  "destinations": [
+    {
+      "id": "5883c3af-289e-4a59-a8e4-141b791f2064",
+      "name": "Eventhouse",
+      "type": "Eventhouse",
+      "properties": {
+        "dataIngestionMode": "DirectIngestion",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "7c27678e-73bc-9105-42df-2a5fef6909cb",
+        "tableName": "bronze_banking",
+        "connectionName": "BankingLoanFraud1",
+        "mappingRuleName": "bronze_banking_mapping_1"
+      },
+      "inputNodes": [
+        {
+          "name": "BankingLoanFraud-stream"
+        }
+      ]
+    }
+  ],
+  "streams": [
+    {
+      "id": "ef43ca44-481b-4163-a572-fa136fb29da2",
+      "name": "BankingLoanFraud-stream",
+      "type": "DefaultStream",
+      "properties": {},
+      "inputNodes": [
+        {
+          "name": "CustomEndpoint-Source"
+        }
+      ]
+    }
+  ],
+  "operators": [],
+  "compatibilityLevel": "1.1"
+}
