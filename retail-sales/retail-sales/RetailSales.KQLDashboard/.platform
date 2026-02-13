@@ -1,11 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Eventstream",
-    "displayName": "RetailSales"
+    "type": "KQLDashboard",
+    "displayName": "RetailSalesStreamDashboard",
+    "description": "RetailSales"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "fb83b8fc-c5f9-9371-4d91-5c1794ccdfc4"
+    "logicalId": "d35d482d-60f0-b659-4f47-5665354b3458"
   }
 }

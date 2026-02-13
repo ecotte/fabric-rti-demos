@@ -59,7 +59,7 @@ import sempy_labs.eventstream as sempy_eventstream
 
 # CELL ********************
 
-eventstream = "RetailSales"
+eventstream = "RetailSalesStream"
 eventstream_source_name = "CustomEndpoint-Source"
 
 es_topology = sempy_eventstream.get_eventstream_topology(eventstream=eventstream)

@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "KQLDashboard",
-    "displayName": "RetailSales",
-    "description": "RetailSales"
+    "type": "Notebook",
+    "displayName": "RetailSalesEmulator",
+    "description": "New notebook"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "d35d482d-60f0-b659-4f47-5665354b3458"
+    "logicalId": "21abae1a-d04d-872b-4893-93ae3610b1c6"
   }
 }
