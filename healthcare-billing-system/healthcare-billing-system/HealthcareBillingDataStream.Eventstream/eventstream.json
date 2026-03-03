@@ -9,7 +9,7 @@
   ],
   "destinations": [
     {
-      "id": "a0596547-9726-4754-8554-bb2e8730c0ff",
+      "id": "261d4468-96fd-487d-9a21-0bd5f56be338",
       "name": "Eventhouse",
       "type": "Eventhouse",
       "properties": {
@@ -17,163 +17,12 @@
         "workspaceId": "00000000-0000-0000-0000-000000000000",
         "itemId": "c2e6e870-d1ad-b534-41fa-5ca51ff03d79",
         "tableName": "bronze_contoso_health",
-        "connectionName": "HealthcareBillingSystem",
+        "connectionName": "HealthcareBillingDataStream",
         "mappingRuleName": "bronze_contoso_health_mapping"
       },
       "inputNodes": [
         {
           "name": "HealthcareBillingSystem-stream"
-        }
-      ],
-      "inputSchemas": [
-        {
-          "name": "HealthcareBillingSystem-stream",
-          "schema": {
-            "columns": [
-              {
-                "name": "timestamp",
-                "type": "Nvarchar(max)",
-                "fields": null,
-                "items": null
-              },
-              {
-                "name": "event_id",
-                "type": "Nvarchar(max)",
-                "fields": null,
-                "items": null
-              },
-              {
-                "name": "source",
-                "type": "Nvarchar(max)",
-                "fields": null,
-                "items": null
-              },
-              {
-                "name": "sensor_data",
-                "type": "Record",
-                "fields": [
-                  {
-                    "name": "Department",
-                    "type": "Nvarchar(max)",
-                    "fields": null,
-                    "items": null
-                  },
-                  {
-                    "name": "department_code",
-                    "type": "Nvarchar(max)",
-                    "fields": null,
-                    "items": null
-                  },
-                  {
-                    "name": "base_claims",
-                    "type": "BigInt",
-                    "fields": null,
-                    "items": null
-                  },
-                  {
-                    "name": "Billed_Amount",
-                    "type": "BigInt",
-                    "fields": null,
-                    "items": null
-                  },
-                  {
-                    "name": "Collection_Amount",
-                    "type": "BigInt",
-                    "fields": null,
-                    "items": null
-                  },
-                  {
-                    "name": "Claims_Rejections",
-                    "type": "BigInt",
-                    "fields": null,
-                    "items": null
-                  }
-                ],
-                "items": null
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "id": "caf339b7-3293-48e2-9b68-25d8fe59ee89",
-      "name": "Customendpoint-Destination",
-      "type": "CustomEndpoint",
-      "properties": {},
-      "inputNodes": [
-        {
-          "name": "HealthcareBillingSystem-stream"
-        }
-      ],
-      "inputSchemas": [
-        {
-          "name": "HealthcareBillingSystem-stream",
-          "schema": {
-            "columns": [
-              {
-                "name": "timestamp",
-                "type": "Nvarchar(max)",
-                "fields": null,
-                "items": null
-              },
-              {
-                "name": "event_id",
-                "type": "Nvarchar(max)",
-                "fields": null,
-                "items": null
-              },
-              {
-                "name": "source",
-                "type": "Nvarchar(max)",
-                "fields": null,
-                "items": null
-              },
-              {
-                "name": "sensor_data",
-                "type": "Record",
-                "fields": [
-                  {
-                    "name": "Department",
-                    "type": "Nvarchar(max)",
-                    "fields": null,
-                    "items": null
-                  },
-                  {
-                    "name": "department_code",
-                    "type": "Nvarchar(max)",
-                    "fields": null,
-                    "items": null
-                  },
-                  {
-                    "name": "base_claims",
-                    "type": "BigInt",
-                    "fields": null,
-                    "items": null
-                  },
-                  {
-                    "name": "Billed_Amount",
-                    "type": "BigInt",
-                    "fields": null,
-                    "items": null
-                  },
-                  {
-                    "name": "Collection_Amount",
-                    "type": "BigInt",
-                    "fields": null,
-                    "items": null
-                  },
-                  {
-                    "name": "Claims_Rejections",
-                    "type": "BigInt",
-                    "fields": null,
-                    "items": null
-                  }
-                ],
-                "items": null
-              }
-            ]
-          }
         }
       ]
     }
