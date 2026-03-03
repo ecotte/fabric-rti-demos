@@ -39,7 +39,7 @@
 
 ! python --version
 ! pip install azure-eventhub==5.11.5 --upgrade --force --quiet
-! pip install semantic-link-labs --quiet
+! pip install semantic-link-labs==0.13.2 --quiet
 
 # METADATA ********************
 
@@ -56,13 +56,12 @@
 
 import json
 from azure.eventhub import EventHubProducerClient, EventData
-import os
-import socket
-import random
-from random import randrange
 import sempy_labs as labs
-import sempy_labs.variable_library as sempy_variable_library
 import sempy_labs.eventstream as sempy_eventstream
+import random, math, json
+import time
+import uuid
+from datetime import datetime, timedelta
 
 # METADATA ********************
 
@@ -85,28 +84,6 @@ es_eventhub_name = es_source_connection["EventHub Name"].iloc[0]
 es_eventhub_connstring = es_source_connection["Primary Connection String"].iloc[0]
 
 producer_events = EventHubProducerClient.from_connection_string(conn_str=es_eventhub_connstring, eventhub_name=es_eventhub_name)
-
-hostname = socket.gethostname()
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "jupyter_python"
-# META }
-
-# MARKDOWN ********************
-
-# # Send events to Event Stream
-
-# CELL ********************
-
-def sendToEventsHub(jsonEvent, producer):
-    eventString = json.dumps(jsonEvent)
-    #print(eventString) 
-    event_data_batch = producer.create_batch() 
-    event_data_batch.add(EventData(eventString)) 
-    producer.send_batch(event_data_batch)
 
 # METADATA ********************
 
@@ -161,17 +138,15 @@ Hospital_Departments = {
 # META   "language_group": "jupyter_python"
 # META }
 
-# MARKDOWN ********************
-
-
 # CELL ********************
 
-import random, math, json
-import random
-import time
-import uuid
-from datetime import datetime, timedelta
-
+def sendToEventsHub(jsonEvent, producer):
+    eventString = json.dumps(jsonEvent)
+    #print(eventString) 
+    event_data_batch = producer.create_batch() 
+    event_data_batch.add(EventData(eventString)) 
+    producer.send_batch(event_data_batch)
+    
 class ContosoHospitalSimulator:
     def __init__(self, current_time_pas):
         ## self.grid_id = grid_id
@@ -262,6 +237,17 @@ def simulate_hospital_data():
                 time.sleep(80)
             else:
                 time.sleep(1)
+
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "jupyter_python"
+# META }
+
+# CELL ********************
+
 simulate_hospital_data()
 
 # METADATA ********************
