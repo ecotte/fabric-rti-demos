@@ -3,7 +3,7 @@
   "metadata": {
     "type": "KQLDashboard",
     "displayName": "BankingLoanFraudDashboard",
-    "description": "BankingLoanFraud"
+    "description": "BankingLoanFraudDashboard"
   },
   "config": {
     "version": "2.0",

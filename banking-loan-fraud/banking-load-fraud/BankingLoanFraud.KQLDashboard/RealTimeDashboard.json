@@ -1,5 +1,9 @@
 {
-  "schema_version": 67,
+  "schema_version": 68,
+  "autoRefresh": {
+    "enabled": true,
+    "defaultInterval": "10s"
+  },
   "tiles": [
     {
       "id": "9f4148a3-0680-4609-8dce-f5fa8edcbe7f",
@@ -354,13 +358,13 @@
   ],
   "dataSources": [
     {
-      "id": "0de5ae26-2290-4a0f-a6cf-4b684c470920",
       "kind": "kusto-trident",
-      "scopeId": "kusto-trident",
+      "id": "0de5ae26-2290-4a0f-a6cf-4b684c470920",
+      "name": "BankingLoanFraud",
       "clusterUri": "",
       "database": "7c27678e-73bc-9105-42df-2a5fef6909cb",
-      "name": "BankingLoanFraud",
-      "workspace": "00000000-0000-0000-0000-000000000000"
+      "workspace": "00000000-0000-0000-0000-000000000000",
+      "scopeId": "kusto-trident"
     }
   ],
   "pages": [
