@@ -22,7 +22,7 @@
       },
       "inputNodes": [
         {
-          "name": "RetailSales-stream"
+          "name": "RetailSalesStream-stream"
         }
       ]
     }
@@ -30,7 +30,7 @@
   "streams": [
     {
       "id": "08998792-bde3-4bc9-abf7-eec30b941738",
-      "name": "RetailSales-stream",
+      "name": "RetailSalesStream-stream",
       "type": "DefaultStream",
       "properties": {},
       "inputNodes": [
@@ -42,4 +42,5 @@
   ],
   "operators": [],
   "compatibilityLevel": "1.1"
+
 }
