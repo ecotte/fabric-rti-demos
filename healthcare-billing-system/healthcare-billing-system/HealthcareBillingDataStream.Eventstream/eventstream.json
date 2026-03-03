@@ -22,7 +22,7 @@
       },
       "inputNodes": [
         {
-          "name": "HealthcareBillingSystem-stream"
+          "name": "HealthcareBillingDataStream-stream"
         }
       ]
     }
@@ -30,7 +30,7 @@
   "streams": [
     {
       "id": "774f57ab-a9ec-4431-a40d-70eb13f36fc9",
-      "name": "HealthcareBillingSystem-stream",
+      "name": "HealthcareBillingDataStream-stream",
       "type": "DefaultStream",
       "properties": {},
       "inputNodes": [
@@ -41,5 +41,5 @@
     }
   ],
   "operators": [],
-  "compatibilityLevel": "1.0"
+  "compatibilityLevel": "1.1"
 }
