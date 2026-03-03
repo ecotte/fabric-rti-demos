@@ -22,7 +22,7 @@
       },
       "inputNodes": [
         {
-          "name": "BankingLoanFraud-stream"
+          "name": "BankingLoanFraudStream-stream"
         }
       ]
     }
@@ -30,7 +30,7 @@
   "streams": [
     {
       "id": "ef43ca44-481b-4163-a572-fa136fb29da2",
-      "name": "BankingLoanFraud-stream",
+      "name": "BankingLoanFraudStream-stream",
       "type": "DefaultStream",
       "properties": {},
       "inputNodes": [
@@ -42,4 +42,5 @@
   ],
   "operators": [],
   "compatibilityLevel": "1.1"
+
 }
