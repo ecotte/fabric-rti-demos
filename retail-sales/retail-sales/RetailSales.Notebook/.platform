@@ -1,11 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Eventstream",
-    "displayName": "TelcoStreamStream"
+    "type": "Notebook",
+    "displayName": "RetailSalesEmulator",
+    "description": "New notebook"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "7d7aed6c-6c77-a555-49dd-789f53659fd8"
+    "logicalId": "21abae1a-d04d-872b-4893-93ae3610b1c6"
   }
 }

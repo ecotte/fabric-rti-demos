@@ -1,0 +1,70 @@
+[
+  {
+    "uniqueIdentifier": "c8971b9c-9058-4bf8-8262-ab8f8fa64e81",
+    "payload": {
+      "name": "BankingLoanFraud",
+      "description": "Container Description",
+      "type": "kqlQueries"
+    },
+    "type": "container-v1"
+  },
+  {
+    "uniqueIdentifier": "2bf9edb4-198a-41fd-ac43-bd4b207bb0cb",
+    "payload": {
+      "name": "BankingLoanFraud event",
+      "runSettings": {
+        "executionIntervalInSeconds": 300
+      },
+      "query": {
+        "queryString": "// Please enter your KQL query (Example):\nlet totaltransactions = toscalar(bronze_banking | count);\nlet fraudtransactions = toreal(toscalar(bronze_banking\n                                    | where is_fraud_suspected == true \n                                    | count)); \nprint FraudPercentage= round((fraudtransactions/totaltransactions)*100,2)"
+      },
+      "eventhouseItem": {
+        "itemId": "7c27678e-73bc-9105-42df-2a5fef6909cb",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemType": "KustoDatabase"
+      },
+      "queryParameters": [],
+      "metadata": {
+        "workspaceId": "0bfe178a-6fbc-46ef-af91-b92dddd5e7ae",
+        "dashboardId": "d6b18f2b-adee-479e-89c3-d4a79c118856",
+        "visualId": "85871527-ba01-41a4-aec9-72494613d6d8"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "c8971b9c-9058-4bf8-8262-ab8f8fa64e81"
+      }
+    },
+    "type": "kqlSource-v1"
+  },
+  {
+    "uniqueIdentifier": "60b436c0-aef6-4c07-8ff9-5a1db031efc5",
+    "payload": {
+      "name": "BankingLoanFraud event",
+      "parentContainer": {
+        "targetUniqueIdentifier": "c8971b9c-9058-4bf8-8262-ab8f8fa64e81"
+      },
+      "definition": {
+        "type": "Event",
+        "instance": "{\"steps\":[{\"id\":\"6048f007-2b9b-49c8-ad7b-57a5b83c21d8\",\"name\":\"SourceEventStep\",\"rows\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"2bf9edb4-198a-41fd-ac43-bd4b207bb0cb\"}],\"kind\":\"SourceReference\",\"name\":\"SourceSelector\"}]}],\"templateId\":\"SourceEvent\",\"templateVersion\":\"1.2.3\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "8a73a492-0968-4ef0-9228-65e74da6bd9f",
+    "payload": {
+      "name": "BankingLoanFraud",
+      "parentContainer": {
+        "targetUniqueIdentifier": "c8971b9c-9058-4bf8-8262-ab8f8fa64e81"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"steps\":[{\"id\":\"e88f1467-fba7-47e0-ae07-5bd27244a278\",\"name\":\"FieldsDefaultsStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"60b436c0-aef6-4c07-8ff9-5a1db031efc5\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"}]},{\"id\":\"31fad7d6-ffdf-4fdd-8836-ecf1e26e156d\",\"name\":\"EventDetectStep\",\"rows\":[{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"FraudPercentage\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"},{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsGreaterThanOrEqualTo\"},{\"name\":\"threshold\",\"type\":\"number\",\"value\":50}],\"kind\":\"NumberValueCondition\",\"name\":\"NumberValueCondition\"}]},{\"id\":\"02322956-f23c-4ea2-b7fc-a902bc4c0233\",\"name\":\"ActStep\",\"rows\":[{\"kind\":\"TeamsMessage\",\"name\":\"TeamsBinding\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"en-us\"},{\"name\":\"recipients\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"surya.josyula@MRTACAT.onmicrosoft.com\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"name\":\"string\",\"type\":\"string\",\"value\":\"Fraud detection threshold breached\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"name\":\"string\",\"type\":\"string\",\"value\":\"Number of Frauds are increasing in transactions. Please check\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[{\"arguments\":[{\"name\":\"name\",\"type\":\"string\",\"value\":\"FraudPercentage\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"FraudPercentage\"}],\"kind\":\"EventFieldReference\",\"name\":\"reference\",\"type\":\"complexReference\"}],\"kind\":\"NameReferencePair\",\"type\":\"complex\"}]}]}]}],\"templateId\":\"EventTrigger\",\"templateVersion\":\"1.2.3\"}",
+        "settings": {
+          "shouldRun": true,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  }
+]

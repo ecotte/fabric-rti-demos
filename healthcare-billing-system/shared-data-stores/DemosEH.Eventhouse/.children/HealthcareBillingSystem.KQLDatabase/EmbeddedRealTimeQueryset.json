@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "ff376007-dca7-4f3d-af7b-cfcbf7c27922",
+        "clusterUri": "https://trd-4gm4j70be2zm1a0mzn.z5.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "1ff03d79-5ca5-41fa-b534-d1adc2e6e870",
+        "databaseItemName": "HealthcareBillingSystem"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "0c023af4-7d99-4c18-b011-14bfa1d05683",
+        "content": "bronze_contoso_health\n| where ingestion_time() > ago(1m)\n| count ",
+        "title": "Tab",
+        "dataSourceId": "ff376007-dca7-4f3d-af7b-cfcbf7c27922"
+      }
+    ]
+  }
+}

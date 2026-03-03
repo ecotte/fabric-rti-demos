@@ -1,11 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Eventstream",
-    "displayName": "TelcoStreamStream"
+    "type": "Notebook",
+    "displayName": "BankingLoanFraudEmulator",
+    "description": "New notebook"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "7d7aed6c-6c77-a555-49dd-789f53659fd8"
+    "logicalId": "ee07fda0-7f1a-8ab4-40cc-735178a92bd3"
   }
 }

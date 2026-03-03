@@ -1,7 +1,7 @@
 {
   "sources": [
     {
-      "id": "985c794e-ff4f-4541-b89d-da061599ea67",
+      "id": "7754b0e4-967b-440f-9044-926a065f31e6",
       "name": "CustomEndpoint-Source",
       "type": "CustomEndpoint",
       "properties": {}
@@ -9,36 +9,28 @@
   ],
   "destinations": [
     {
-      "id": "da9d6401-26b9-477d-bcc2-4b854ba1c43d",
+      "id": "261d4468-96fd-487d-9a21-0bd5f56be338",
       "name": "Eventhouse",
       "type": "Eventhouse",
       "properties": {
         "dataIngestionMode": "DirectIngestion",
         "workspaceId": "00000000-0000-0000-0000-000000000000",
-        "itemId": "602e8fc0-3a1a-b4dc-4de0-09ad5e01108e",
-        "tableName": "cdr_raw",
-        "connectionName": "TelcoStream_9alq2v",
-        "mappingRuleName": "cdr_raw_mapping"
+        "itemId": "c2e6e870-d1ad-b534-41fa-5ca51ff03d79",
+        "tableName": "bronze_contoso_health",
+        "connectionName": "HealthcareBillingDataStream",
+        "mappingRuleName": "bronze_contoso_health_mapping"
       },
       "inputNodes": [
         {
-          "name": "TelecomCallDataRecordsStream-stream"
-        }
-      ],
-      "inputSchemas": [
-        {
-          "name": "TelecomCallDataRecordsStream-stream",
-          "schema": {
-            "columns": []
-          }
+          "name": "HealthcareBillingDataStream-stream"
         }
       ]
     }
   ],
   "streams": [
     {
-      "id": "74834898-0dc3-44c7-b951-3c46a0ea9de4",
-      "name": "TelecomCallDataRecordsStream-stream",
+      "id": "774f57ab-a9ec-4431-a40d-70eb13f36fc9",
+      "name": "HealthcareBillingDataStream-stream",
       "type": "DefaultStream",
       "properties": {},
       "inputNodes": [
@@ -50,5 +42,4 @@
   ],
   "operators": [],
   "compatibilityLevel": "1.1"
-
 }
