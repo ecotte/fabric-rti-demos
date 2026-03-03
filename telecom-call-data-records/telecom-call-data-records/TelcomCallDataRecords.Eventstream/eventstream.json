@@ -22,12 +22,12 @@
       },
       "inputNodes": [
         {
-          "name": "TelcoStream-stream"
+          "name": "TelcoStreamStream-stream"
         }
       ],
       "inputSchemas": [
         {
-          "name": "TelcoStream-stream",
+          "name": "TelcoStreamStream-stream",
           "schema": {
             "columns": []
           }
@@ -50,4 +50,5 @@
   ],
   "operators": [],
   "compatibilityLevel": "1.1"
+
 }
