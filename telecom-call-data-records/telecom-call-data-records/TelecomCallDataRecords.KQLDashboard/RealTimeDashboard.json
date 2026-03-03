@@ -1,5 +1,10 @@
 {
-  "schema_version": 67,
+  "schema_version": 68,
+  "autoRefresh": {
+    "enabled": true,
+    "defaultInterval": "1s",
+    "minInterval": "1s"
+  },
   "tiles": [
     {
       "id": "122e0ac7-47fb-4529-9e63-bd4957130a6d",
@@ -240,13 +245,13 @@
   ],
   "dataSources": [
     {
-      "id": "a7fb01c2-9c42-47ff-ae8b-83245b738a6c",
       "kind": "kusto-trident",
-      "scopeId": "kusto-trident",
+      "id": "a7fb01c2-9c42-47ff-ae8b-83245b738a6c",
+      "name": "TelecomCallDataRecords",
       "clusterUri": "",
       "database": "602e8fc0-3a1a-b4dc-4de0-09ad5e01108e",
-      "name": "TelecomCallDataRecords",
-      "workspace": "00000000-0000-0000-0000-000000000000"
+      "workspace": "00000000-0000-0000-0000-000000000000",
+      "scopeId": "kusto-trident"
     }
   ],
   "pages": [
