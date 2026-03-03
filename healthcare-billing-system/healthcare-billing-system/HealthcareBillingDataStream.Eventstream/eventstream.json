@@ -24,6 +24,157 @@
         {
           "name": "HealthcareBillingSystem-stream"
         }
+      ],
+      "inputSchemas": [
+        {
+          "name": "HealthcareBillingSystem-stream",
+          "schema": {
+            "columns": [
+              {
+                "name": "timestamp",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "event_id",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "source",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "sensor_data",
+                "type": "Record",
+                "fields": [
+                  {
+                    "name": "Department",
+                    "type": "Nvarchar(max)",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "department_code",
+                    "type": "Nvarchar(max)",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "base_claims",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "Billed_Amount",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "Collection_Amount",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "Claims_Rejections",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  }
+                ],
+                "items": null
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "caf339b7-3293-48e2-9b68-25d8fe59ee89",
+      "name": "Customendpoint-Destination",
+      "type": "CustomEndpoint",
+      "properties": {},
+      "inputNodes": [
+        {
+          "name": "HealthcareBillingSystem-stream"
+        }
+      ],
+      "inputSchemas": [
+        {
+          "name": "HealthcareBillingSystem-stream",
+          "schema": {
+            "columns": [
+              {
+                "name": "timestamp",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "event_id",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "source",
+                "type": "Nvarchar(max)",
+                "fields": null,
+                "items": null
+              },
+              {
+                "name": "sensor_data",
+                "type": "Record",
+                "fields": [
+                  {
+                    "name": "Department",
+                    "type": "Nvarchar(max)",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "department_code",
+                    "type": "Nvarchar(max)",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "base_claims",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "Billed_Amount",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "Collection_Amount",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  },
+                  {
+                    "name": "Claims_Rejections",
+                    "type": "BigInt",
+                    "fields": null,
+                    "items": null
+                  }
+                ],
+                "items": null
+              }
+            ]
+          }
+        }
       ]
     }
   ],
