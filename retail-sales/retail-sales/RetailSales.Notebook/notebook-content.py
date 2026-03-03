@@ -13,12 +13,7 @@
 # META       "default_lakehouse_workspace_id": ""
 # META     },
 # META     "event_stream": {
-# META       "known_event_streams": [
-# META         {
-# META           "artifact_id": "94ccdfc4-5c17-4d91-9371-c5f9fb83b8fc",
-# META           "stream_id": "94ccdfc4-5c17-4d91-9371-c5f9fb83b8fc"
-# META         }
-# META       ]
+# META       "known_event_streams": []
 # META     }
 # META   }
 # META }

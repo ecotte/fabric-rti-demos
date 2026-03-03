@@ -3,7 +3,7 @@
   "metadata": {
     "type": "KQLDashboard",
     "displayName": "RetailSalesDashboard",
-    "description": "RetailSales"
+    "description": "RetailSalesDashboard"
   },
   "config": {
     "version": "2.0",

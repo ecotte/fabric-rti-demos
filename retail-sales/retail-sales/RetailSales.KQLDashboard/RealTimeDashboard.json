@@ -1,5 +1,9 @@
 {
-  "schema_version": 67,
+  "schema_version": 68,
+  "autoRefresh": {
+    "enabled": true,
+    "defaultInterval": "1s"
+  },
   "tiles": [
     {
       "id": "cdbcf0e7-4518-47c8-9c6f-d47f760474de",
@@ -132,6 +136,7 @@
         "verticalLine": "",
         "crossFilterDisabled": false,
         "drillthroughDisabled": false,
+        "forceAxisTicks": false,
         "crossFilter": [
           {
             "interaction": "column",
@@ -140,7 +145,6 @@
             "disabled": false
           }
         ],
-        "forceAxisTicks": false,
         "drillthrough": [],
         "selectedDataOnLoad": {
           "all": true,
@@ -338,12 +342,12 @@
   "dataSources": [
     {
       "kind": "kusto-trident",
-      "scopeId": "kusto-trident",
+      "id": "1143c3f5-0808-4181-acd8-754129044ec6",
+      "name": "RetailSales",
       "clusterUri": "",
       "database": "e7912323-05f7-baf1-4be0-f0ba14f7c628",
-      "name": "RetailSales",
-      "id": "1143c3f5-0808-4181-acd8-754129044ec6",
-      "workspace": "00000000-0000-0000-0000-000000000000"
+      "workspace": "00000000-0000-0000-0000-000000000000",
+      "scopeId": "kusto-trident"
     }
   ],
   "pages": [
