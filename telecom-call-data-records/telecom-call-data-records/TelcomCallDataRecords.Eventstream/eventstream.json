@@ -22,12 +22,12 @@
       },
       "inputNodes": [
         {
-          "name": "TelcoStream-stream"
+          "name": "TelecomCallDataRecordsStream-stream"
         }
       ],
       "inputSchemas": [
         {
-          "name": "TelcoStream-stream",
+          "name": "TelecomCallDataRecordsStream-stream",
           "schema": {
             "columns": []
           }
@@ -38,7 +38,7 @@
   "streams": [
     {
       "id": "74834898-0dc3-44c7-b951-3c46a0ea9de4",
-      "name": "TelcoStream-stream",
+      "name": "TelecomCallDataRecordsStream-stream",
       "type": "DefaultStream",
       "properties": {},
       "inputNodes": [
@@ -50,4 +50,5 @@
   ],
   "operators": [],
   "compatibilityLevel": "1.1"
+
 }
