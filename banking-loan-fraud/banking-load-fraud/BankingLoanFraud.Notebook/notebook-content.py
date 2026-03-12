@@ -4,31 +4,43 @@
 
 # META {
 # META   "kernel_info": {
-# META     "name": "synapse_pyspark"
+# META     "name": "jupyter",
+# META     "jupyter_kernel_name": "python3.11"
 # META   },
 # META   "dependencies": {
 # META     "event_stream": {
-# META       "known_event_streams": [
-# META         {
-# META           "artifact_id": "008588ec-c43a-45c8-bbd0-de7f87c721d8",
-# META           "stream_id": "008588ec-c43a-45c8-bbd0-de7f87c721d8"
-# META         }
-# META       ]
+# META       "known_event_streams": []
 # META     }
 # META   }
 # META }
+
+# MARKDOWN ********************
+
+# ## Demo Overview – Real-Time Banking Loan Fraud Emulator with Microsoft Fabric
+# 
+# This notebook demonstrates how **Contoso Bank** uses **Microsoft Fabric Real-Time Intelligence (RTI)** to modernize load fraud detection through real-time data ingestion, analytics, and automation.
+# 
+# Contoso integrates streaming and batch data from operational systems, and load requests to detect possible fraud using Eventstreams, Eventhouse, KQL and Copilot.
+# 
+# ### ▶️ Running the Demo
+# When you **run this notebook**, it will **start emitting simulated streaming data after a few seconds**.  
+# This data represents real-time loan fraud detection flowing through Fabric and is used throughout the demo.
+# 
+# At any point, you can **navigate to the workspace** to:
+# - View live data represented in a **Real-Time Dashboard**
+# - Explore related **Fabric items** such as Eventstreams and Eventhouse
 
 # CELL ********************
 
 ! python --version
 ! pip install azure-eventhub==5.11.5 --upgrade --force --quiet
-! pip install semantic-link-labs --quiet
+! pip install semantic-link-labs==0.13.1 --quiet
 
 # METADATA ********************
 
 # META {
 # META   "language": "python",
-# META   "language_group": "synapse_pyspark"
+# META   "language_group": "jupyter_python"
 # META }
 
 # MARKDOWN ********************
@@ -58,7 +70,7 @@ import sempy_labs.eventstream as sempy_eventstream
 
 # META {
 # META   "language": "python",
-# META   "language_group": "synapse_pyspark"
+# META   "language_group": "jupyter_python"
 # META }
 
 # CELL ********************
@@ -82,7 +94,7 @@ hostname = socket.gethostname()
 
 # META {
 # META   "language": "python",
-# META   "language_group": "synapse_pyspark"
+# META   "language_group": "jupyter_python"
 # META }
 
 # CELL ********************
@@ -103,7 +115,7 @@ DEVICES = ['Mobile', 'Desktop', 'Tablet']
 
 # META {
 # META   "language": "python",
-# META   "language_group": "synapse_pyspark"
+# META   "language_group": "jupyter_python"
 # META }
 
 # CELL ********************
@@ -218,7 +230,7 @@ class BankingLoanDataGenerator:
 
 # META {
 # META   "language": "python",
-# META   "language_group": "synapse_pyspark"
+# META   "language_group": "jupyter_python"
 # META }
 
 # CELL ********************
@@ -284,5 +296,5 @@ df
 
 # META {
 # META   "language": "python",
-# META   "language_group": "synapse_pyspark"
+# META   "language_group": "jupyter_python"
 # META }
